@@ -1,1 +1,43 @@
-<p>users-filter works!</p>
+<div class="filter-wrapper">
+  <h3>Фильтры</h3>
+  <div class="filter-inputs">
+
+    <input class="filter-item" placeholder='Имя'
+      [(ngModel)]="nameFilterValue" (ngModelChange)="filter()">
+
+    <datalist class="filter-item" placeholder="Компания">
+      <option disabled selected>Компания</option>
+      <option *ngFor="let company of companiesList">
+        {{company}}
+      </option>
+    </datalist>
+
+    <div class="filter-item companiesCheckList">
+      <label *ngFor="let company of companiesList">
+        <input type="checkbox" name="companiesList[]"
+          value="{{company}}">
+        Google Inc.
+      </label>
+    </div>
+
+    <table>
+      <thead>
+        <th>
+          Город
+        </th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let city of citiesList">
+            <input type="radio" value="{{city}}"
+              [(ngModel)]="cityFilterValue">
+            {{city}}
+        </tr>
+      </tbody>
+    </table>
+
+    <button (click)="click()">
+      Поиск по выбранному городу
+    </button>
+
+  </div>
+</div>

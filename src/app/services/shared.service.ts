@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import User from '../interfaces/user-interface';
 
 @Injectable({
@@ -6,7 +7,9 @@ import User from '../interfaces/user-interface';
 })
 export class SharedService {
 
-  currentUser!: User;
+  public currentUser!: User;
+
+  public nameFilterValue$: Subject<string> = new Subject<string>();
 
   constructor() { }
 }

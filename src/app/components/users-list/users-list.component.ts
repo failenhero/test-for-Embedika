@@ -14,26 +14,32 @@ export class UsersListComponent implements OnInit {
   public users: User[] = [];
 
   public pageNum!: number;
-  public itemsOnPageNum: number = 3;
+  public itemsOnPageNum: number = 4;
   public collectionSize!: any;
 
   public paginationButtonsNumber!: any;
 
+  public nameFilterValue!: string;
+
   constructor(
     private apiService: ApiService,
     private router: Router,
-    private sharedService: SharedService
+    private sharedService: SharedService,
   ) {
+    this.sharedService.nameFilterValue$.subscribe(res => {
+      this.nameFilterValue = res;
+    })
     this.pageNum = 1;
     this.refreshUsers();
     this.setCollectionSize();
+
    }
 
   ngOnInit(): void {
   }
 
   private setCollectionSize() {
-    this.apiService.setCollectionSize().subscribe(res => {
+    this.apiService.getUsersListInfo().subscribe(res => {
       this.collectionSize = res.length;
       this.paginationButtonsNumber = Array.from({ length: this.collectionSize }, (v, i) =>  i + 1);
     })

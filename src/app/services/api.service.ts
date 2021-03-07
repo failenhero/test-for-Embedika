@@ -15,7 +15,7 @@ export class ApiService {
     private http: HttpClient
   ) {  }
 
-  public setCollectionSize() {
+  public getUsersListInfo() {
     return this.http.get<User[]>(this.allUsersURL);
   }
 

@@ -9,6 +9,9 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { UsersFilterComponent } from './components/users-filter/users-filter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { NameFilterPipe } from './pipes/name-filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +19,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     MainPageComponent,
     UsersListComponent,
     UserCardComponent,
-    UsersFilterComponent
+    UsersFilterComponent,
+    NameFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
