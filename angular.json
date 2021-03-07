@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "test-for-Embedika"
+  "defaultProject": "test-for-Embedika",
+  "cli": {
+    "analytics": "3c5698db-ef08-465a-8e8e-1570791a9b2e"
+  }
 }
