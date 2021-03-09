@@ -20,6 +20,7 @@ export class UsersListComponent implements OnInit {
   public paginationButtonsNumber!: any;
 
   public nameFilterValue!: string;
+  public cityFilterValue!: string;
 
   constructor(
     private apiService: ApiService,
@@ -29,13 +30,15 @@ export class UsersListComponent implements OnInit {
     this.sharedService.nameFilterValue$.subscribe(res => {
       this.nameFilterValue = res;
     })
-    this.pageNum = 1;
-    this.refreshUsers();
-    this.setCollectionSize();
-
+    this.sharedService.cityFilterValue$.subscribe(res => {
+      this.cityFilterValue = res;
+    })
    }
 
   ngOnInit(): void {
+    this.pageNum = 1;
+    this.refreshUsers();
+    this.setCollectionSize();
   }
 
   private setCollectionSize() {

@@ -10,6 +10,7 @@ export class SharedService {
   public currentUser!: User;
 
   public nameFilterValue$: Subject<string> = new Subject<string>();
+  public cityFilterValue$: Subject<string> = new Subject<string>();
 
   constructor() { }
 }

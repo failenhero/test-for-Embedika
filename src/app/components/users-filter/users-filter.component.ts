@@ -12,13 +12,12 @@ import { SharedService } from 'src/app/services/shared.service';
 export class UsersFilterComponent implements OnInit {
 
   public usersList: User[] = [];
-  public companiesList:any = [];
   public citiesList: any = [];
+  public companiesList: any = [];
 
   public nameFilterValue!: string;
   public companiesFilterValue: any = [];
   public cityFilterValue!: string;
-
 
   constructor(
     private apiService: ApiService,
@@ -27,6 +26,7 @@ export class UsersFilterComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsersList();
+
   }
 
   private getUsersList() {
@@ -39,15 +39,15 @@ export class UsersFilterComponent implements OnInit {
     })
   }
 
+
   public filter(){
     this.sharedService.nameFilterValue$.next(this.nameFilterValue);
+    this.sharedService.cityFilterValue$.next(this.cityFilterValue);
   }
 
-  click(){
-    console.log(this.cityFilterValue)
-    console.log(this.nameFilterValue)
+  uncheckRadio(){
+
   }
-
-
 }
+
 

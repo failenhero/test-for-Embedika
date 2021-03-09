@@ -5,7 +5,8 @@
     <input class="filter-item" placeholder='Имя'
       [(ngModel)]="nameFilterValue" (ngModelChange)="filter()">
 
-    <datalist class="filter-item" placeholder="Компания">
+
+    <!-- <datalist class="filter-item" placeholder="Компания">
       <option disabled selected>Компания</option>
       <option *ngFor="let company of companiesList">
         {{company}}
@@ -18,7 +19,10 @@
           value="{{company}}">
         Google Inc.
       </label>
-    </div>
+    </div> -->
+
+
+
 
     <table>
       <thead>
@@ -28,15 +32,18 @@
       </thead>
       <tbody>
         <tr *ngFor="let city of citiesList">
-            <input type="radio" value="{{city}}"
-              [(ngModel)]="cityFilterValue">
+            <input type="radio"
+              name="cityRadio"
+              value="{{city}}"
+              [(ngModel)]="cityFilterValue"
+              (ngModelChange)="filter()">
             {{city}}
         </tr>
       </tbody>
     </table>
 
-    <button (click)="click()">
-      Поиск по выбранному городу
+    <button (click)="uncheckRadio()">
+      Убрать флажок фильтрации
     </button>
 
   </div>
