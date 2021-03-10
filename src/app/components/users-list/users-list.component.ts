@@ -21,24 +21,32 @@ export class UsersListComponent implements OnInit {
 
   public nameFilterValue!: string;
   public cityFilterValue!: string;
+  public companyFilterValue!: string;
 
   constructor(
     private apiService: ApiService,
     private router: Router,
     private sharedService: SharedService,
   ) {
+    this.gettingAllStreams()
+  }
+
+  ngOnInit(): void {
+    this.pageNum = 1;
+    this.refreshUsers();
+    this.setCollectionSize();
+  }
+
+  gettingAllStreams(){
     this.sharedService.nameFilterValue$.subscribe(res => {
       this.nameFilterValue = res;
     })
     this.sharedService.cityFilterValue$.subscribe(res => {
       this.cityFilterValue = res;
     })
-   }
-
-  ngOnInit(): void {
-    this.pageNum = 1;
-    this.refreshUsers();
-    this.setCollectionSize();
+    this.sharedService.companyFilterValue$.subscribe(res => {
+      this.companyFilterValue = res;
+    })
   }
 
   private setCollectionSize() {

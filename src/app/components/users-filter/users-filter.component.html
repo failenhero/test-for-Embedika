@@ -6,6 +6,21 @@
       [(ngModel)]="nameFilterValue" (ngModelChange)="filter()">
 
 
+    <ng-multiselect-dropdown
+      [placeholder]="'custom placeholder'"
+      [settings]="dropdownSettings"
+      [data]="dropdownList"
+      [(ngModel)]="selectedItems"
+      (onSelect)="onItemSelect($event)"
+      (onSelectAll)="onSelectAll($event)"
+    >
+    <option *ngFor="let company of dropdownList">
+      {{company}}
+    </option>
+
+    </ng-multiselect-dropdown>
+
+
     <!-- <datalist class="filter-item" placeholder="Компания">
       <option disabled selected>Компания</option>
       <option *ngFor="let company of companiesList">

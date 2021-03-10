@@ -10,9 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 import { NameFilterPipe } from './pipes/name-filter.pipe';
 import { CityFilterPipe } from './pipes/city-filter.pipe';
+import { CompanyFilterPipe } from './pipes/company-filter.pipe';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { CityFilterPipe } from './pipes/city-filter.pipe';
     UserCardComponent,
     UsersFilterComponent,
     NameFilterPipe,
-    CityFilterPipe
+    CityFilterPipe,
+    CompanyFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { CityFilterPipe } from './pipes/city-filter.pipe';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

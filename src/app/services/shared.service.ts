@@ -11,6 +11,7 @@ export class SharedService {
 
   public nameFilterValue$: Subject<string> = new Subject<string>();
   public cityFilterValue$: Subject<string> = new Subject<string>();
+  public companyFilterValue$: Subject<string> = new Subject<string>();
 
   constructor() { }
 }
