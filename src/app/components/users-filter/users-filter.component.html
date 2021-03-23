@@ -7,7 +7,8 @@
 
 
     <ng-multiselect-dropdown
-      [placeholder]="'custom placeholder'"
+      class="dropDown filter-item"
+      [placeholder]="'компания'"
       [settings]="dropdownSettings"
       [data]="dropdownList"
       [(ngModel)]="selectedItems"
@@ -39,7 +40,7 @@
 
 
 
-    <table>
+    <table class="filter-item">
       <thead>
         <th>
           Город
@@ -57,8 +58,10 @@
       </tbody>
     </table>
 
-    <button (click)="uncheckRadio()">
-      Убрать флажок фильтрации
+    <button
+      (click)="uncheckRadio()"
+      class="flag-btn">
+      отменить выбор
     </button>
 
   </div>
