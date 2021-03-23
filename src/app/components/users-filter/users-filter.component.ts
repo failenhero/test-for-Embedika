@@ -70,11 +70,6 @@ export class UsersFilterComponent implements OnInit {
     this.sharedService.cityFilterValue$.next(this.cityFilterValue);
   }
 
-  public uncheckRadio(){
-    console.log(this.dropdownList);
-    console.log(this.companiesList);
-  }
-
   public onItemSelect(item: any) {
     //console.log(item)
     this.sharedService.companyFilterValue$.next(item);

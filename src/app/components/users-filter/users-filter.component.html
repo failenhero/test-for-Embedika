@@ -2,8 +2,11 @@
   <h3>Фильтры</h3>
   <div class="filter-inputs">
 
-    <input class="filter-item" placeholder='Имя'
+      <input class="filter-item input-filter" placeholder='Имя'
       [(ngModel)]="nameFilterValue" (ngModelChange)="filter()">
+      <span class="bar"></span>
+
+
 
 
     <ng-multiselect-dropdown
@@ -20,24 +23,6 @@
     </option>
 
     </ng-multiselect-dropdown>
-
-
-    <!-- <datalist class="filter-item" placeholder="Компания">
-      <option disabled selected>Компания</option>
-      <option *ngFor="let company of companiesList">
-        {{company}}
-      </option>
-    </datalist>
-
-    <div class="filter-item companiesCheckList">
-      <label *ngFor="let company of companiesList">
-        <input type="checkbox" name="companiesList[]"
-          value="{{company}}">
-        Google Inc.
-      </label>
-    </div> -->
-
-
 
 
     <table class="filter-item">
@@ -58,11 +43,6 @@
       </tbody>
     </table>
 
-    <button
-      (click)="uncheckRadio()"
-      class="flag-btn">
-      отменить выбор
-    </button>
 
   </div>
 </div>
